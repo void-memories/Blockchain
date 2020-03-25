@@ -1,11 +1,14 @@
 #include <iostream>
 #include <fstream>
+#include <vector>
 using namespace std;
 
 class Read
 {
     ifstream myfile;
-    string data;
+    string data[8];
+    string temp;
+    vector<string> v;
 
 public:
     Read(string name)
@@ -13,11 +16,14 @@ public:
         myfile.open(name);
     }
 
-    string init()
+    vector<string> init()
     {
-        while (getline(myfile, data))
+        int i=0;
+        while (getline(myfile, temp))
         {
-            cout << data << '\n';
+            v.push_back(temp);
+
         }
+        return v;
     }
 };

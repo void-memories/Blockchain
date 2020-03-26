@@ -18,13 +18,13 @@ public:
 
     vector<string> init()
     {
-        int i=0;
+        int i = 0;
         v.clear();
         while (getline(myfile, temp))
         {
             v.push_back(temp);
-
         }
+        myfile.close();
         return v;
     }
 };

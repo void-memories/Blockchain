@@ -3,15 +3,18 @@
 #include <fstream>
 using namespace std;
 
-class Write{
+class Write
+{
     ofstream myfile;
 
-    public:
-    Write(string name){
+public:
+    Write(string name)
+    {
         myfile.open(name);
     }
 
-    void init(string data){
-        myfile<<data<<endl;
+    void init(string data)
+    {
+        myfile << data << endl;
     }
 };

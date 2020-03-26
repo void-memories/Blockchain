@@ -4,7 +4,7 @@ using namespace std;
 
 int main()
 {
-    int ch;
+    int ch,n;
     while(1){
         cout<<"********************"<<endl;
         cout<<"Select An Option"<<endl;
@@ -14,7 +14,11 @@ int main()
         cin>>ch;
         switch(ch){
             case 1:
-            Database db;
+            cout<<"enter the number of entries"<<endl;
+            cin>>n;
+            Database db(n);
+            cout<<"Database is being created"<<endl;
+            db.start_read();
 
 
         }

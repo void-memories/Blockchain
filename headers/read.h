@@ -14,7 +14,8 @@ class Read
     vector<string> v;
 
 public:
-Read(string name);
-vector<string> init();
+    Read();
+    Read(string name);
+    vector<string> init();
 };
 #endif

@@ -1,8 +1,10 @@
 #include <iostream>
 #include <vector>
 #include <map>
+#include "../headers/verification.h"
 using namespace std;
-class List
+
+class List : public Verification
 {
 
 public:

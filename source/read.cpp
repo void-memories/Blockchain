@@ -10,20 +10,20 @@
 #include "../headers/write.h"
 using namespace std;
 
+Read::Read() {}
+Read::Read(string name)
+{
+    myfile.open(name);
+}
 
-    Read::Read(string name)
+vector<string> Read::init()
+{
+    int i = 0;
+    v.clear();
+    while (getline(myfile, temp))
     {
-        myfile.open(name);
+        v.push_back(temp);
     }
-
-    vector<string> Read::init()
-    {
-        int i = 0;
-        v.clear();
-        while (getline(myfile, temp))
-        {
-            v.push_back(temp);
-        }
-        myfile.close();
-        return v;
-    }
+    myfile.close();
+    return v;
+}

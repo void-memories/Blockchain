@@ -10,15 +10,12 @@
 #include "../headers/write.h"
 using namespace std;
 
+Write::Write(string name)
+{
+    myfile.open(name);
+}
 
-    Write::Write(string name)
-    {
-        myfile.open(name);
-    }
-
-    void Write::init(string data)
-    {
-        myfile << data << endl;
-    }
-
-    
+void Write::init(string data)
+{
+    myfile << data << endl;
+}

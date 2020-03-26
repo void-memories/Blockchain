@@ -3,9 +3,10 @@
 #include <vector>
 #include <map>
 #include <string>
+#include "database.h"
 using namespace std;
 
-class CreateHash
+class CreateHash:public Database
 {
     vector<string> to_be_hashed;
     vector<string> hashkeys;

@@ -10,13 +10,13 @@
 #include "../headers/write.h"
 using namespace std;
 
-
-    vector<string> Verification::verify(map<string, int> m)
+Verification::Verification() {}
+vector<string> Verification::verify(map<string, int> m)
+{
+    for (map<string, int>::iterator it = m.begin(); it != m.end(); ++it)
     {
-        for (map<string, int>::iterator it = m.begin(); it != m.end(); ++it)
-        {
-            if (it->second == 1)
-                final_keys.push_back(it->first);
-        }
-        return final_keys;
+        if (it->second == 1)
+            final_keys.push_back(it->first);
     }
+    return final_keys;
+}

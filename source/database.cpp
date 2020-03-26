@@ -1,15 +1,17 @@
 #include <iostream>
 #include <vector>
 #include <map>
-#include "read.cpp"
-#include "hash.cpp"
-#include "write.cpp"
-#include "dehash.cpp"
-#include "verification.cpp"
+#include <fstream>
+#include "../headers/database.h"
+#include "../headers/dehash.h"
+#include "../headers/hash.h"
+#include "../headers/read.h"
+#include "../headers/verification.h"
+#include "../headers/write.h"
 #include "list.cpp"
 using namespace std;
-class Database
-{
+
+
     vector<string> temp;
     vector<string> temp2;
     vector<string> marks_card[100];
@@ -25,8 +27,8 @@ class Database
     int n;
     char choice;
 
-public:
-    Database(int number_of_entries)
+
+    Database::Database(int number_of_entries)
     {
 
         n = number_of_entries;
@@ -72,7 +74,7 @@ public:
             f1.init(hashkeys[i]);
     }
 
-    void start_read()
+    void Database::start_read()
     {
         Read rd("output/hash_keys.txt");
 
@@ -124,4 +126,4 @@ public:
         List lst;
         lst.CreateBlockChain(accepted_keys, db, marks_card);
     }
-};
+

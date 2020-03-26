@@ -1,14 +1,17 @@
 #include <iostream>
-#include <map>
 #include <vector>
+#include <map>
+#include <fstream>
+#include "../headers/database.h"
+#include "../headers/dehash.h"
+#include "../headers/hash.h"
+#include "../headers/read.h"
+#include "../headers/verification.h"
+#include "../headers/write.h"
 using namespace std;
 
-class Verification
-{
-    vector<string> final_keys;
 
-public:
-    vector<string> verify(map<string, int> m)
+    vector<string> Verification::verify(map<string, int> m)
     {
         for (map<string, int>::iterator it = m.begin(); it != m.end(); ++it)
         {
@@ -17,4 +20,3 @@ public:
         }
         return final_keys;
     }
-};

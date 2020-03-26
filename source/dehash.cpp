@@ -1,14 +1,20 @@
 #include <iostream>
 #include <vector>
 #include <map>
+#include <fstream>
+#include "../headers/database.h"
+#include "../headers/dehash.h"
+#include "../headers/hash.h"
+#include "../headers/read.h"
+#include "../headers/verification.h"
+#include "../headers/write.h"
 using namespace std;
 
-class DeHash
-{
-    map<string, int> keyresult;
 
-public:
-    map<string, int> init(vector<string> keys, vector<string> genuine)
+    
+
+
+    map<string, int> DeHash::init(vector<string> keys, vector<string> genuine)
     {
         int n = keys.size();
 
@@ -27,4 +33,3 @@ public:
         }
         return keyresult;
     }
-};

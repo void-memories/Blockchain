@@ -1,6 +1,6 @@
 #include <iostream>
 #include <limits>
-#include "source/database.cpp"
+#include "headers/database.h"
 using namespace std;
 
 int main()

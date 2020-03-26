@@ -1,22 +1,22 @@
 #include <iostream>
-#include <fstream>
 #include <vector>
+#include <map>
+#include <fstream>
+#include "../headers/database.h"
+#include "../headers/dehash.h"
+#include "../headers/hash.h"
+#include "../headers/read.h"
+#include "../headers/verification.h"
+#include "../headers/write.h"
 using namespace std;
 
-class Read
-{
-    ifstream myfile;
-    string data[8];
-    string temp;
-    vector<string> v;
 
-public:
-    Read(string name)
+    Read::Read(string name)
     {
         myfile.open(name);
     }
 
-    vector<string> init()
+    vector<string> Read::init()
     {
         int i = 0;
         v.clear();
@@ -27,4 +27,3 @@ public:
         myfile.close();
         return v;
     }
-};

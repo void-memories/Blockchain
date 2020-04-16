@@ -6,6 +6,10 @@
         "iostream": "cpp",
         "istream": "cpp",
         "ostream": "cpp",
-        "vector": "cpp"
+        "vector": "cpp",
+        "__config": "cpp",
+        "memory_resource": "cpp",
+        "functional": "cpp",
+        "iterator": "cpp"
     }
 }

@@ -4,11 +4,10 @@ using namespace std;
 
 
     
-    void DispError()
-    {
+    
 
-    }
-
-    void Exceptions::Exception(int no,string em){
+    void Exceptions::Exception(int no){
+        if(no==0)
+        cout<<"Exception Occured!!! Cannot Be Zero Error"<<endl;
 
     }

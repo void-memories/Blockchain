@@ -50,6 +50,83 @@ public:
 		}
 	}
 
+	void deleteNode(struct Node **head_ref, int key)
+	{
+
+		struct Node *temp = *head_ref, *prev;
+
+		if (temp != NULL)
+		{
+			*head_ref = temp->next; // Changed head
+			free(temp);				// free old head
+			return;
+		}
+
+		while (temp != NULL)
+		{
+			prev = temp;
+			temp = temp->next;
+		}
+
+		if (temp == NULL)
+			return;
+
+		prev->next = temp->next;
+
+		free(temp); // Free memory
+	}
+
+	void deleteList(Node **head_ref)
+	{
+
+		Node *current = *head_ref;
+		Node *next;
+
+		while (current != NULL)
+		{
+			next = current->next;
+			free(current);
+			current = next;
+		}
+
+		*head_ref = NULL;
+	}
+
+	void push(Node **head_ref, int new_data)
+	{
+		Node *new_node = new Node();
+
+		new_node->next = (*head_ref);
+	}
+
+	void deleteNode2(struct Node **head_ref, int position)
+	{
+
+		if (*head_ref == NULL)
+			return;
+
+		struct Node *temp = *head_ref;
+
+		if (position == 0)
+		{
+			*head_ref = temp->next; // Change head
+			free(temp);				// free old head
+			return;
+		}
+
+		for (int i = 0; temp != NULL && i < position - 1; i++)
+			temp = temp->next;
+
+		if (temp == NULL || temp->next == NULL)
+			return;
+
+		struct Node *next = temp->next->next;
+
+		free(temp->next); // Free memory
+
+		temp->next = next; // Unlink the deleted node from list
+	}
+
 	int CreateBlockChain(vector<string> accepted_keys, map<string, int> db, vector<string> marks_card[])
 	{
 		Node *head = NULL;

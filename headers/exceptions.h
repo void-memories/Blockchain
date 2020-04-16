@@ -10,7 +10,6 @@ class Exceptions{
     string errorMessage;
 
     public:
-    void DispError();
-    void Exception(int no,string em);
+    void Exception(int no);
 };
 #endif
